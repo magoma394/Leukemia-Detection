@@ -1,35 +1,64 @@
-Leukemia Detection using Deep Learning and Computer Vision
-This project utilizes deep learning and computer vision techniques to classify and detect acute lymphoblastic leukemia (ALL) from microscopic blood smear images. Leveraging advanced convolutional neural networks (CNNs) like EfficientNet B3, VGG16, and ResNet50, we aim to create a system that accurately classifies benign and malignant cells, specifically in detecting different subtypes of ALL.
+# Leukemia Detection using Deep Learning and Computer Vision
 
-Project Overview
-Leukemia is a type of blood cancer affecting the bone marrow, where abnormal blood cells are produced. Accurate and early detection is crucial for effective treatment. This project focuses on detecting leukemia from peripheral blood smear (PBS) images using CNNs for feature extraction and classification.
+This project applies **deep learning** and **computer vision** techniques to classify and detect **acute lymphoblastic leukemia (ALL)** from blood smear images. We leverage **CNNs** such as EfficientNet B3, VGG16, and ResNet50 to build an automated, accurate system for classifying benign and malignant cells.
 
-Key Features:
-Classification of leukemia cells into benign and malignant classes.
-Advanced CNN architectures used include EfficientNet B3, VGG16, and ResNet50.
-Custom CNN model for stage classification of leukemia.
-Dataset
-The dataset comprises 3242 high-resolution images from 89 patients. Images are categorized into benign and malignant classes, with malignant cases further classified into subtypes of leukemia (Early Pre-B, Pre-B, and Pro-B ALL).
+## Table of Contents
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Models and Techniques](#models-and-techniques)
+- [Results and Analysis](#results-and-analysis)
+- [How to Run](#how-to-run)
+- [License](#license)
 
-Data Preprocessing:
-Image resizing to 224x224 for CNN input.
-Segmentation techniques to focus on relevant parts of the image.
-Data augmentation (flipping, scaling) to improve model robustness.
-Models and Techniques
-EfficientNet B3
-Accuracy: 93.75% with a 95.56% training accuracy.
-Balanced approach between performance and computational efficiency.
-VGG16 and VGG19
-Known for simplicity and robustness.
-Achieved moderate results but were less suitable compared to other models.
-ResNet50
-Tackles the vanishing gradient problem with residual learning.
-Achieved 91.32% accuracy in its best configuration.
-Custom CNN Model
-Designed to classify the stages of leukemia.
-Achieved 97.7% accuracy after extensive experimentation.
-Results and Analysis
-The project's models achieved significant accuracy in classifying leukemia stages. The best-performing model, a custom CNN, reached 97.7% accuracy, proving the viability of deep learning for this task.
+## Overview
+Leukemia, particularly **Acute Lymphoblastic Leukemia (ALL)**, is a type of blood cancer that affects white blood cells. Early detection is key for effective treatment. This project uses **Convolutional Neural Networks (CNNs)** to analyze blood smear images and differentiate between **benign** and **malignant** cells, with a focus on classifying **ALL subtypes**.
 
-Conclusion
-This project demonstrates the potential of deep learning in medical diagnostics, specifically in classifying and detecting leukemia with high accuracy. The integration of deep learning into clinical practice could streamline diagnosis, improve treatment outcomes, and reduce misdiagnosis.
+## Dataset
+- **Total Images**: 3242 PBS images
+- **Patients**: 89
+- **Classes**: Benign (Hematogones), Malignant (Early Pre-B, Pre-B, Pro-B ALL)
+- **Preprocessing**: Image resizing (224x224), segmentation, data augmentation (flipping, scaling)
+
+## Models and Techniques
+
+### **EfficientNet B3**
+- **Training Accuracy**: 95.56%
+- **Validation Accuracy**: 93.75%
+
+### **ResNet50**
+- **Best Accuracy**: 91.32%
+- Uses **residual learning** to solve the vanishing gradient problem.
+
+### **Custom CNN**
+- **Accuracy**: 97.7%
+- Best for **leukemia stage classification**, optimized with 6 convolutional layers.
+
+## Results and Analysis
+- **Custom CNN** achieved the highest accuracy for **leukemia stage classification** at **97.7%**.
+- Models show strong generalization and performance across diverse datasets.
+
+## How to Run
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/leukemia-detection.git
+    cd leukemia-detection
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Train the model**:
+    ```bash
+    python train.py --model EfficientNetB3
+    ```
+
+4. **Evaluate the model**:
+    ```bash
+    python evaluate.py --model EfficientNetB3
+    ```
+
+## License
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
